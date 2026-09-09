@@ -9,137 +9,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <!-- Os estilos da pagina ficam separados para facilitar a manutencao. -->
-  <!--
-    :root {
-      --ink: #291b1d;
-      --wine: #6e2634;
-      --wine-dark: #451823;
-      --rose: #c97778;
-      --cream: #f7f0ea;
-      --paper: #fffaf6;
-      --gold: #b99050;
-      --line: #e6d8d0;
-      --muted: #806e6a;
-      --shadow: 0 18px 48px rgba(69, 24, 35, .12);
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { margin: 0; color: var(--ink); background: var(--paper); font-family: 'DM Sans', sans-serif; }
-    a { color: inherit; text-decoration: none; }
-    button, input { font: inherit; }
-    button { cursor: pointer; }
-    .container { width: min(1160px, calc(100% - 48px)); margin: 0 auto; }
-
-    .announcement { background: var(--wine-dark); color: #f8ece5; text-align: center; font-size: 11px; letter-spacing: .14em; padding: 11px 18px; text-transform: uppercase; }
-    .topbar { align-items: center; display: flex; height: 84px; justify-content: space-between; }
-    .brand { color: var(--wine); font-family: 'Playfair Display', serif; font-size: 31px; font-weight: 600; letter-spacing: -.05em; }
-    .brand span { color: var(--gold); font-style: italic; }
-    nav { display: flex; gap: 34px; margin-left: 90px; }
-    nav a { color: var(--muted); font-size: 13px; font-weight: 600; position: relative; }
-    nav a:hover { color: var(--wine); }
-    nav a::after { background: var(--rose); bottom: -8px; content: ''; height: 1px; left: 0; position: absolute; transform: scaleX(0); transform-origin: right; transition: transform .25s; width: 100%; }
-    nav a:hover::after { transform: scaleX(1); transform-origin: left; }
-    .actions { align-items: center; display: flex; gap: 18px; }
-    .icon-button { align-items: center; background: transparent; border: 0; color: var(--ink); display: inline-flex; padding: 8px; position: relative; }
-    .icon-button svg { height: 19px; width: 19px; }
-    .cart-count { align-items: center; background: var(--wine); border-radius: 50%; color: #fff; display: flex; font-size: 9px; height: 16px; justify-content: center; position: absolute; right: 1px; top: 0; width: 16px; }
-    .menu-toggle { display: none; }
-
-    .hero { background: var(--cream); min-height: 575px; overflow: hidden; position: relative; }
-    .hero::before { border: 1px solid rgba(185, 144, 80, .27); border-radius: 50%; content: ''; height: 500px; position: absolute; right: -130px; top: -165px; width: 500px; }
-    .hero-grid { align-items: center; display: grid; grid-template-columns: .9fr 1.1fr; min-height: 575px; }
-    .eyebrow { align-items: center; color: var(--gold); display: flex; font-size: 11px; font-weight: 700; gap: 12px; letter-spacing: .2em; text-transform: uppercase; }
-    .eyebrow::before { background: var(--gold); content: ''; height: 1px; width: 34px; }
-    h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 500; }
-    h1 { color: var(--wine-dark); font-size: clamp(52px, 6vw, 82px); letter-spacing: -.055em; line-height: .99; margin: 25px 0 22px; max-width: 500px; }
-    h1 em { color: var(--rose); font-style: italic; }
-    .hero-copy { color: var(--muted); font-size: 15px; line-height: 1.75; max-width: 390px; }
-    .primary-button { background: var(--wine); border: 1px solid var(--wine); color: white; display: inline-flex; font-size: 12px; font-weight: 700; gap: 11px; letter-spacing: .1em; margin-top: 27px; padding: 16px 21px; text-transform: uppercase; transition: background .2s, transform .2s; }
-    .primary-button:hover { background: var(--wine-dark); transform: translateY(-2px); }
-    .hero-image { height: 575px; position: relative; }
-    .hero-image img { height: 100%; object-fit: cover; object-position: center; width: 100%; }
-    .hero-image::after { background: linear-gradient(90deg, var(--cream) 0, transparent 22%); content: ''; inset: 0; pointer-events: none; position: absolute; }
-    .hero-tag { align-items: center; background: rgba(255,250,246,.92); bottom: 32px; display: flex; gap: 14px; padding: 15px 20px; position: absolute; right: 28px; z-index: 1; }
-    .hero-tag strong { color: var(--wine); display: block; font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 500; }
-    .hero-tag small { color: var(--muted); font-size: 10px; letter-spacing: .07em; text-transform: uppercase; }
-    .seal { border: 1px solid var(--gold); border-radius: 50%; color: var(--gold); display: grid; font-size: 10px; height: 42px; place-items: center; text-align: center; width: 42px; }
-
-    .benefits { border-bottom: 1px solid var(--line); border-top: 1px solid var(--line); }
-    .benefit-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
-    .benefit { align-items: center; display: flex; gap: 14px; padding: 24px 20px; }
-    .benefit + .benefit { border-left: 1px solid var(--line); }
-    .benefit svg { color: var(--gold); flex: 0 0 auto; height: 22px; width: 22px; }
-    .benefit strong { display: block; font-size: 12px; margin-bottom: 3px; }
-    .benefit span { color: var(--muted); font-size: 11px; }
-
-    .section { padding: 96px 0; }
-    .section-heading { align-items: end; display: flex; justify-content: space-between; margin-bottom: 35px; }
-    .section-heading h2 { color: var(--wine-dark); font-size: 42px; letter-spacing: -.04em; margin: 10px 0 0; }
-    .section-heading p { color: var(--muted); font-size: 13px; margin: 0 0 5px; }
-    .link-arrow { border-bottom: 1px solid var(--wine); color: var(--wine); font-size: 11px; font-weight: 700; letter-spacing: .1em; padding-bottom: 6px; text-transform: uppercase; }
-    .product-grid { display: grid; gap: 20px; grid-template-columns: repeat(4, 1fr); }
-    .product-image { background: var(--cream); height: 305px; overflow: hidden; position: relative; }
-    .product-image img { height: 100%; object-fit: cover; transition: transform .5s; width: 100%; }
-    .product-card:hover img { transform: scale(1.05); }
-    .badge { background: var(--wine); color: white; font-size: 9px; left: 12px; letter-spacing: .1em; padding: 7px 9px; position: absolute; text-transform: uppercase; top: 12px; }
-    .heart { background: rgba(255,250,246,.9); border: 0; color: var(--wine); padding: 9px; position: absolute; right: 10px; top: 10px; }
-    .heart svg { display: block; height: 16px; width: 16px; }
-    .product-info { padding: 17px 2px; }
-    .product-info h3 { color: var(--wine-dark); font-size: 19px; margin: 0 0 6px; }
-    .product-info p { color: var(--muted); font-size: 11px; margin: 0 0 12px; }
-    .price { color: var(--wine); font-size: 14px; font-weight: 700; }
-    .add { background: none; border: 0; color: var(--gold); float: right; font-size: 11px; font-weight: 700; letter-spacing: .08em; padding: 0; text-transform: uppercase; }
-
-    .story { background: var(--wine-dark); color: #f9efe8; overflow: hidden; }
-    .story-grid { align-items: center; display: grid; grid-template-columns: 1fr 1fr; }
-    .story-image { height: 440px; margin-left: -24px; overflow: hidden; }
-    .story-image img { height: 100%; object-fit: cover; width: 100%; }
-    .story-copy { padding: 60px 6% 60px 12%; }
-    .story-copy .eyebrow { color: var(--gold); }
-    .story-copy h2 { font-size: 45px; letter-spacing: -.04em; line-height: 1.05; margin: 22px 0; }
-    .story-copy p { color: #d9c5bc; font-size: 14px; line-height: 1.8; max-width: 410px; }
-    .text-button { border-bottom: 1px solid var(--gold); color: #f9e3c3; display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .1em; margin-top: 19px; padding-bottom: 7px; text-transform: uppercase; }
-
-    .newsletter { background: #ead7cc; padding: 76px 0; text-align: center; }
-    .newsletter h2 { color: var(--wine-dark); font-size: 38px; margin: 0 0 12px; }
-    .newsletter p { color: var(--muted); font-size: 13px; margin: 0 auto 25px; }
-    .subscribe { display: flex; margin: 0 auto; max-width: 450px; }
-    .subscribe input { background: var(--paper); border: 1px solid transparent; color: var(--ink); min-width: 0; padding: 15px 17px; width: 100%; }
-    .subscribe button { background: var(--wine); border: 0; color: white; font-size: 11px; font-weight: 700; letter-spacing: .1em; padding: 0 19px; text-transform: uppercase; }
-    .form-message { color: var(--wine); font-size: 12px; margin-top: 14px; min-height: 16px; }
-    footer { background: var(--paper); border-top: 1px solid var(--line); color: var(--muted); font-size: 11px; padding: 25px 0; }
-    .footer-inner { align-items: center; display: flex; justify-content: space-between; }
-    .footer-brand { color: var(--wine); font-family: 'Playfair Display', serif; font-size: 20px; }
-
-    @media (max-width: 800px) {
-      .container { width: min(100% - 32px, 600px); }
-      .topbar { height: 72px; }
-      nav { background: var(--paper); box-shadow: var(--shadow); display: none; flex-direction: column; gap: 22px; left: 16px; margin: 0; padding: 23px; position: absolute; right: 16px; top: 136px; z-index: 5; }
-      nav.open { display: flex; }
-      .menu-toggle { display: inline-flex; }
-      .hero-grid, .story-grid { grid-template-columns: 1fr; }
-      .hero { min-height: auto; }
-      .hero-grid { min-height: auto; padding-top: 62px; }
-      .hero-content { padding-bottom: 56px; }
-      .hero-image { height: 390px; margin: 0 -16px; }
-      .hero-image::after { background: linear-gradient(0deg, var(--cream), transparent 28%); }
-      .benefit-grid { grid-template-columns: 1fr; }
-      .benefit { padding: 17px 0; }
-      .benefit + .benefit { border-left: 0; border-top: 1px solid var(--line); }
-      .section { padding: 66px 0; }
-      .section-heading { align-items: start; flex-direction: column; gap: 13px; }
-      .section-heading h2 { font-size: 35px; }
-      .product-grid { grid-template-columns: repeat(2, 1fr); gap: 28px 14px; }
-      .product-image { height: 230px; }
-      .story-image { height: 300px; margin: 0 -16px; }
-      .story-copy { padding: 56px 0 64px; }
-      .story-copy h2 { font-size: 38px; }
-      .footer-inner { align-items: start; flex-direction: column; gap: 12px; }
-    }
-    @media (max-width: 430px) { .actions { gap: 5px; } .brand { font-size: 27px; } .hero-tag { bottom: 18px; right: 16px; } .subscribe { flex-direction: column; gap: 8px; } .subscribe button { min-height: 47px; } }
-  -->
 </head>
 <body>
   <div class="announcement">Frete grátis nas compras acima de R$ 299</div>
@@ -147,7 +16,7 @@
     <div class="container topbar">
       <button class="icon-button menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
       <a class="brand" href="#top">ess<span>e</span>nza</a>
-      <nav id="mainNav"><a href="#colecao">Coleção</a><a href="#mais-vendidos">Mais vendidos</a><a href="#nossa-historia">Nossa história</a></nav>
+      <nav id="mainNav"><a href="#colecao">Coleção</a><a href="#mais-vendidos">Mais vendidos</a><a href="#nossa-historia">Nossa história</a><a href="contato.html">Contato</a></nav>
       <div class="actions">
         <button class="icon-button" aria-label="Buscar" onclick="document.getElementById('searchInput').focus()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 5 5"/></svg></button>
         <button class="icon-button" aria-label="Sacola de compras"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 8h14l-1 12H6L5 8Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></svg><span class="cart-count" id="cartCount">0</span></button>
@@ -162,7 +31,10 @@
           <div class="eyebrow">A arte de perfumar</div>
           <h1>Uma presença que fica <em>na memória.</em></h1>
           <p class="hero-copy">Descubra fragrâncias autorais e clássicos eternos selecionados para acompanhar a sua melhor versão.</p>
-          <a class="primary-button" href="#colecao">Explorar coleção <span>→</span></a>
+          <div class="hero-actions">
+            <a class="primary-button" href="#colecao">Explorar coleção <span>→</span></a>
+            <a class="secondary-button" href="contato.html">Falar com a Essenza</a>
+          </div>
         </div>
         <div class="hero-image">
           <img src="https://images.unsplash.com/photo-1547887538-e3a2f32cb1cc?auto=format&fit=crop&w=1000&q=85" alt="Frasco de perfume sobre uma mesa iluminada">
